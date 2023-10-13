@@ -6,10 +6,10 @@ import dotenv
 import redis
 import telegram
 
-from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
-from telegram.ext import Updater, MessageHandler, Filters, CallbackContext, CommandHandler, ConversationHandler
+from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
+from telegram.ext import Updater, MessageHandler, Filters, CommandHandler, ConversationHandler
 from telegram_log import TelegramLogsHandler
-from txt_questions import get_questions
+
 
 logger = logging.getLogger(__name__)
 
