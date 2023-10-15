@@ -50,15 +50,6 @@ def handle_give_up(event, vk_api, storage):
     return handle_new_question_request(event, vk_api, storage)
 
 
-def echo(event, vk_api, keyboard):
-    vk_api.messages.send(
-        user_id=event.user_id,
-        message=event.text,
-        random_id=random.randint(1, 1000),
-        keyboard=keyboard.get_keyboard(),
-    )
-
-
 def main():
     load_dotenv()
     logging.basicConfig(

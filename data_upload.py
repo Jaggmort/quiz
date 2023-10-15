@@ -23,12 +23,12 @@ def main():
     parser.add_argument(
         '--file',
         nargs='*',
-        default=['questions.txt'],
+        default='questions.txt',
         help='имя файла с вопросами для викторины '
     )
 
     try:
-        with open(os.path.join(os.getcwd(), parser.parse_args().file[0]), "r", encoding="KOI8-R") as questions:
+        with open(os.path.join(os.getcwd(), parser.parse_args().file), "r", encoding="KOI8-R") as questions:
             file_contents = questions.read()
     except (FileNotFoundError, ValueError) as error:
         logger.info(f'Неверно указан путь к файлу.\n Ошибка: {error}')
